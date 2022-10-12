@@ -2,9 +2,12 @@ package ui_automation.step_definitions;
 
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ui_automation.pages.ApApplicationHomePage;
 import ui_automation.utilities.ConfigurationReader;
 import ui_automation.utilities.Driver;
@@ -23,8 +26,11 @@ public class ApApplicationStep {
     }
 
     @Then("I hover over womens tab")
-    public void i_hover_over_womens_tab() {
+    public void i_hover_over_womens_tab() throws InterruptedException {
+
+
         act.moveToElement(apApplicationHomePage.womensTab).perform();
+        Thread.sleep(3000);
     }
 
     @Then("I click on casual dresses link")
